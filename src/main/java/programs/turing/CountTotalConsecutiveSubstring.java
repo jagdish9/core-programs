@@ -2,7 +2,7 @@ package programs.turing;
 
 public class CountTotalConsecutiveSubstring {
     public static void main(String[] args) {
-        String word = "jameskakaiwartjkakamet";
+        String word = "jameskakaiwartjkametka";
         String sub = "ka";
 
         int count = getTotalConsecutiveSubStringCount(word, sub);
@@ -25,12 +25,13 @@ public class CountTotalConsecutiveSubstring {
             }
 
             if(count == bLen) {
-                for(int l = i+count; l < aLen - bLen; l++) {
+                for(int l = i+count; l < i+count+bLen; l++) {
                     count = 0;
                     for (int k = 0; k < bLen; k++) {
-                        if (word.charAt(l + k) == sub.charAt(k)) {
-                            count++;
-                        }
+                        if (word.charAt(l + k) != sub.charAt(k))
+                            break;
+
+                        count++;
                     }
                     if(count == bLen) {
                         totalCount++;
