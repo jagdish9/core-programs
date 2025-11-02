@@ -1,6 +1,7 @@
 package programs.streamapi;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class SortListUsingStream {
@@ -9,5 +10,10 @@ public class SortListUsingStream {
 
         list.stream()
                 .sorted().forEach(e -> System.out.println(e));
+
+        System.out.println();
+        System.out.println("List in sorted order:");
+        list.stream()
+                .sorted(Collections.reverseOrder()).forEach(System.out::println);
     }
 }
