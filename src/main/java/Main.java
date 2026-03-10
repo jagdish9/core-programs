@@ -1,3 +1,8 @@
+import io.jsonwebtoken.security.Keys;
+
+import java.security.Key;
+import java.util.Base64;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -11,5 +16,9 @@ public class Main {
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
         }
+
+        Key key = Keys.secretKeyFor(io.jsonwebtoken.SignatureAlgorithm.HS256);
+        String base64Key = Base64.getEncoder().encodeToString(key.getEncoded());
+        System.out.println(base64Key);
     }
 }
