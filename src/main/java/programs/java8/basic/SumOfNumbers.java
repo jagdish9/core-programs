@@ -8,7 +8,7 @@ public class SumOfNumbers {
         List<Integer> numbers = Arrays.asList(3, 6, 9, 12, 15);
 
         int sum = numbers.stream()
-                .mapToInt(value -> value.intValue())
+                .mapToInt(value -> value)
                 .sum();
 
         System.out.println(sum);

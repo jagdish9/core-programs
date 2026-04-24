@@ -17,7 +17,8 @@ public class ReserveWordAndPreserveSpecialChar {
     private static String getReverseWord(String input) {
         List<Character> letterReversed = input.chars()
                 .mapToObj(c -> (char) c)
-                .filter(Character::isLetter)
+                //.filter(Character::isLetter)
+                .filter(f -> Character.isLetter(f))
                 .collect(Collectors.toList());
 
         Collections.reverse(letterReversed);

@@ -15,7 +15,7 @@ public class EmployeeDetailsUsingStream {
                 new EmployeeRating("Jalesh", 17000.0, 2)
         );
 
-        //rating if it is 3 or more then increase the salary by 10000 or
+        //rating if it is 3 or more than increase the salary by 10000 or
         // if it is less than or equal to 2 then increase to 5000
 
         //this can be used for single condition

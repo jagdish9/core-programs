@@ -1,6 +1,7 @@
 package programs.java8.realtime;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,5 +24,17 @@ public class DepartmentWithHighestAverageSalary {
                 .get();
 
         System.out.println(output.getKey() + " "+output.getValue());
+
+        Map.Entry<String, Double> output2 = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getDepartment,
+                        Collectors.averagingDouble(Employee::getSalary)))
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+                .limit(1)
+                .findFirst()
+                .get();
+
+        System.out.println(output2.getKey() + " "+output2.getValue());
     }
 }

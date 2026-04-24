@@ -1,0 +1,2 @@
+Idea: Only one instance exists in entire application
+Real life: One DB connection manager

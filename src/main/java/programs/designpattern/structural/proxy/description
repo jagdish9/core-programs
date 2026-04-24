@@ -1,0 +1,4 @@
+(Control Access)
+
+Idea: A wrapper controlling access to real object
+Real life: ATM machine → Bank server
