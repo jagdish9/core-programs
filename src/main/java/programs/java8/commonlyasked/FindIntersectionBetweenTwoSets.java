@@ -9,8 +9,8 @@ public class FindIntersectionBetweenTwoSets {
         Set<Integer> set02 = Set.of(44, 66, 40, 60, 11, 30, 46, 89);
 
         Set<Integer> output = set01.stream()
-               // .filter(f -> set02.contains(f))
-                .filter(set02::contains)
+               .filter(f -> set02.contains(f))
+                //.filter(set02::contains)
                 .collect(Collectors.toSet());
 
         System.out.println(output);

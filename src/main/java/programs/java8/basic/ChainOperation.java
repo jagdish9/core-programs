@@ -2,6 +2,7 @@ package programs.java8.basic;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ChainOperation {
     public static void main(String[] args) {
@@ -11,7 +12,8 @@ public class ChainOperation {
         List<String> output = names.stream()
                 .filter(e -> e.startsWith("j"))
                 .map(m -> m.toUpperCase())
-                .toList();
+                //.toList();
+                        .collect(Collectors.toList());
 
         System.out.println(output);
     }

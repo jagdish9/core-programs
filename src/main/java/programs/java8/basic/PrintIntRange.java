@@ -2,6 +2,7 @@ package programs.java8.basic;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class PrintIntRange {
@@ -16,6 +17,11 @@ public class PrintIntRange {
         List<Integer> output = IntStream.rangeClosed(start, end)
                         .mapToObj(ls::get).toList();
 
+        List<Integer> output2 = IntStream.rangeClosed(start, end)
+                        .mapToObj(m -> ls.get(m))
+                                .collect(Collectors.toList());
+
         System.out.println(output);
+        System.out.println(output2);
     }
 }
