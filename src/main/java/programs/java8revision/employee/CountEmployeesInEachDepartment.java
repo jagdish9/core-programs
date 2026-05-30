@@ -25,6 +25,18 @@ public class CountEmployeesInEachDepartment {
         output.forEach((k, v) -> {
             System.out.println(k + ": "+ v);
         });
+
+        System.out.println();
+
+        Map<String, Long> deptCount = employees.stream()
+                .collect(Collectors.groupingBy(EmployeeDepartment::getDepartment,
+                        Collectors.collectingAndThen(Collectors.toList(),
+                                ls -> (long) ls.size()))
+                );
+
+        deptCount.forEach((k, v) -> {
+            System.out.println(k + ": "+ v);
+        });
     }
 }
 

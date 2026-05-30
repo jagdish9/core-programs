@@ -1,0 +1,13 @@
+Flight Recorder (JFR)
+
+Production profiling and monitoring tool.
+
+Useful for:
+
+Performance analysis
+Memory leak debugging
+CPU analysis
+
+Command:
+
+java -XX:StartFlightRecording=duration=60s,filename=recording.jfr MyApp

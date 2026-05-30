@@ -2,7 +2,6 @@ package programs.marker;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serial;
 import java.io.Serializable;
 
 public class SerializeDemo {

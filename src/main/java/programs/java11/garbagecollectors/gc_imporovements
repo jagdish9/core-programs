@@ -1,0 +1,20 @@
+Garbage Collector Improvements
+a) Epsilon GC
+
+"No-op" garbage collector.
+
+Used for:
+
+Performance testing
+Memory pressure testing
+-XX:+UseEpsilonGC
+
+b) ZGC (Experimental in Java 11)
+
+Low-latency garbage collector.
+
+Useful for:
+
+Large heap sizes
+Applications needing low pause times
+-XX:+UnlockExperimentalVMOptions -XX:+UseZGC
