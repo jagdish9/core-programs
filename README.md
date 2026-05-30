@@ -1,2 +1,12 @@
 # core-programs
-problem solving | data structure | core java | hacker rank question practice
+This project contains core java programs
+* Linked List
+* Tree
+* Graph
+* 2 Pointer approach
+* Sliding window
+* Array
+* String
+* Stream API
+* Design patterns
+* SOLID Design principles
