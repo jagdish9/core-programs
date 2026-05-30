@@ -1,5 +1,5 @@
 # core-programs
-This project contains core java programs
+This project contains java core programs
 * Linked List
 * Tree
 * Graph
