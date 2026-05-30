@@ -7,6 +7,8 @@ This project contains core java programs
 * Sliding window
 * Array
 * String
+* Multithreading
+* Executor Service
 * Stream API
 * Design patterns
 * SOLID Design principles
