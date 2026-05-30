@@ -14,7 +14,8 @@ public class PrintRange {
         int end = 20;
 
         List<Integer> output = IntStream.rangeClosed(start, end)
-                .mapToObj(ls::get)
+                //.mapToObj(ls::get)
+                .mapToObj(i -> ls.get(i))
                 .toList();
 
         System.out.println(output);
