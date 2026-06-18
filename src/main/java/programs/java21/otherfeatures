@@ -1,0 +1,12 @@
+Performance and JVM Improvements
+Generational ZGC
+
+Improves garbage collection efficiency by separating young and old generations.
+
+Key Encapsulation Mechanism (KEM) API
+
+Introduces cryptographic APIs for modern key exchange mechanisms.
+
+Foreign Function & Memory API (Preview)
+
+Provides a safer, more modern alternative to JNI for calling native libraries.

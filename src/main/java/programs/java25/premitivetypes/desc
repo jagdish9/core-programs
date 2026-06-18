@@ -1,0 +1,14 @@
+Primitive Types in Patterns, instanceof, and switch
+
+You can now use primitive types directly in pattern matching.
+
+switch (obj) {
+    case int i -> System.out.println("Integer: " + i);
+    case double d -> System.out.println("Double: " + d);
+    default -> System.out.println("Other");
+}
+
+Benefits:
+
+More consistent pattern matching
+Reduces boxing/unboxing overhead
