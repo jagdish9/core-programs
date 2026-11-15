@@ -1,0 +1,94 @@
+Problem Before Java 25
+
+In earlier Java versions, a constructor call to this(...) or super(...) had to be the very first statement in the constructor.
+
+For example, this was illegal:
+
+class Employee {
+    Employee(String name) {
+        System.out.println("Validating...");
+        super();  // Compile Error
+    }
+}
+
+You would get:
+
+Constructor call must be the first statement in a constructor
+Java 25: Flexible Constructor Bodies
+
+Java 25 allows certain statements to appear before the constructor delegation call.
+
+Example:
+
+class Employee {
+
+    Employee(String name) {
+        name = name.trim();     // Allowed before this(...)
+        this(name, 0);
+    }
+
+    Employee(String name, int age) {
+        System.out.println(name + " " + age);
+    }
+}
+
+Before Java 25, the above code was not allowed because this(name, 0) was not the first statement.
+
+Why was this added?
+
+Developers often need to:
+
+Validate arguments
+Normalize data
+Perform simple computations
+
+before calling another constructor.
+
+Previously, they had to create helper methods:
+
+class Employee {
+
+    Employee(String name) {
+        this(normalize(name), 0);
+    }
+
+    static String normalize(String name) {
+        return name.trim();
+    }
+
+    Employee(String name, int age) {
+    }
+}
+
+Java 25 removes much of this boilerplate.
+
+What is allowed before this() or super()?
+
+Typical examples:
+
+name = name.trim();
+age = Math.max(age, 0);
+var normalized = normalize(name);
+
+The compiler ensures that no illegal access to the not-yet-constructed object occurs.
+
+What is still NOT allowed?
+
+You cannot use this before the constructor delegation completes.
+
+Example:
+
+class Employee {
+
+    Employee(String name) {
+        System.out.println(this); // Not allowed
+        this(name, 0);
+    }
+
+    Employee(String name, int age) {}
+}
+
+Reason:
+
+The object is not fully initialized yet.
+
