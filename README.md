@@ -12,3 +12,4 @@ This project contains java core programs
 * Stream API
 * Design patterns
 * SOLID Design principles
+* Overview of Java 21 & 25 features
